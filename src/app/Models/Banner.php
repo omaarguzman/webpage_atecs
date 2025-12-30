@@ -2,22 +2,25 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
  * @property integer $id_usuario
- * @property string $titutlo
+ * @property string $titulo
  * @property string $img
- * @property string $fecha_inicio
- * @property string $fecha_fin
- * @property string $updated_at
- * @property string $created_at
+ * @property \Date $fecha_inicio
+ * @property \Date $fecha_fin
+ * @property \DateTime $updated_at
+ * @property \DateTime $created_at
  * @property integer $activo
  * @property Usuario $usuario
  */
 class Banner extends Model
 {
+    use HasFactory;
+    
     /**
      * The table associated with the model.
      * 
@@ -28,7 +31,7 @@ class Banner extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id_usuario', 'titutlo', 'img', 'fecha_inicio', 'fecha_fin', 'updated_at', 'created_at', 'activo'];
+    protected $fillable = ['id_usuario', 'titulo', 'img', 'fecha_inicio', 'fecha_fin', 'updated_at', 'created_at', 'activo'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -37,4 +40,5 @@ class Banner extends Model
     {
         return $this->belongsTo('App\Models\Usuario', 'id_usuario');
     }
+    
 }

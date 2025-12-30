@@ -8,6 +8,7 @@ services:
       - "5173:5173" # Vite
     volumes:
       - ./src:/var/www/html # Comparte la carpeta src con el contenedor
+    command: sh -c "chown -R www-data:www-data /var/www/html/public /var/www/html/storage && chmod -R 755 /var/www/html/public /var/www/html/storage && npm install && npm run dev & apache2-foreground"
     container_name: webBlog-app
 
   mysql:
@@ -17,7 +18,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: blog
+      MYSQL_DATABASE: web
       MYSQL_USER: carlos
       MYSQL_PASSWORD: admin1
     volumes:

@@ -4,10 +4,10 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class PagoRedirect extends Component
+class GestionSocial extends Component
 {
     public function render()
     {
-        return view('livewire.pago-redirect');
+        return view('livewire.gestion-social');
     }
 }

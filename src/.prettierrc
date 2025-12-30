@@ -1,0 +1,5 @@
+{
+  "plugins": ["@shufo/prettier-plugin-blade"],
+  "tabWidth": 4,
+  "singleQuote": true
+}

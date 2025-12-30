@@ -1,4 +1,4 @@
 @extends('components.layouts.app')
 @section('content')
-@livewire('login-form')
+    @livewire('login-form')
 @endsection
